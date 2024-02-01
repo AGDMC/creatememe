@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./Main.scss";
 
 const GenerateMeme = () => {
@@ -10,33 +11,29 @@ const GenerateMeme = () => {
 
   useEffect(() => {
     // Fetch images from the API
-    fetch("https://api.memegen.link/images")
-      .then((response) => response.json())
-      .then((data) => setImages(data));
+    fetchMemes();
   }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (!selectedImage || !topText || !bottomText) {
-      // alert("Please fill in all fields");
-      return;
+  const fetchMemes = async () => {
+    try {
+      const response = await axios.get("https://api.memegen.link/images");
+      setImages(response.data);
+    } catch (error) {
+      console.error("Error fetching memes:", error);
     }
-
-    // Generate meme URL
-    const memeApiUrl = `https://api.memegen.link/images/${selectedImage}/${topText}/${bottomText}.png`;
-    setMemeUrl(memeApiUrl);
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  // };
+  const generateMeme = () => {
+    setMemeUrl(
+      `https://api.memegen.link/images/${selectedImage}/${topText}/${bottomText}.png`
+    );
+  };
 
   return (
-    <section ClassName="meme">
+    <section className="meme">
       <h1 className="meme__title">Generate your Meme </h1>
 
-      <form className="meme__form" onSubmit={handleSubmit}>
+      <form className="meme__form">
         <div className="meme__formwrapper">
           <label className="meme__labelname" htmlFor="label">
             Select Image:
@@ -77,7 +74,9 @@ const GenerateMeme = () => {
         </div>
 
         <div className="meme__button">
-          <button className="meme__click">Generate Meme</button>
+          <button onClick={generateMeme} className="meme__click">
+            Generate Meme
+          </button>
         </div>
       </form>
       {memeUrl && (
