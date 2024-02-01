@@ -7,7 +7,7 @@ const GenerateMeme = () => {
 
   return (
     <section ClassName="meme">
-      <h1>Generate your Meme </h1>
+      <h1 className="meme__title">Generate your Meme </h1>
 
       <form className="meme__form" onSubmit={handleSubmit}>
         <div className="meme__formwrapper">
