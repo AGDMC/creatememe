@@ -13,6 +13,8 @@ div.hero {
 img.logo-1 {
   width: 40%;
   height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 div.hero__title {
@@ -20,4 +22,9 @@ div.hero__title {
   text-align: center;
   font-style: italic;
   font-weight: 100;
+}
+
+img.hero__sample {
+  width: 100%;
+  height: auto;
 }
