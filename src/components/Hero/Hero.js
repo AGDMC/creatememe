@@ -11,7 +11,7 @@ function Hero() {
           <img className="logo-1" src={logo} alt="logo" />
         </Link>
         <div className="hero__title">
-          Make relevant memes to express your mood with Tejal & Amanda{" "}
+          Make relevant memes to express your mood{" "}
           <span role="img" aria-label="smiley emoji">
             &#x1F60A;
           </span>
