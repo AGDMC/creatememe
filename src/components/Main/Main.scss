@@ -5,13 +5,34 @@
 
 .meme {
   position: relative;
-  margin: 1rem;
+  margin: 2rem;
 
-  @include tablet {
-    margin-bottom: 2rem;
+  &__title {
+    font-size: 4rem;
+    font-weight: 300;
   }
 
-  @include desktop {
-    margin-bottom: 2rem;
+  &__form {
+    margin: 2rem;
+  }
+
+  &__formwrapper {
+    padding: 1rem;
+  }
+
+  &__labelname {
+    font-size: 2rem;
+    font-weight: 400;
+    color: black;
+  }
+
+  &__click {
+    text-align: center;
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    border-style: none;
+    background-color: rgb(177, 177, 3);
+    color: black;
   }
 }
