@@ -1,0 +1,26 @@
+@use "../styles/mixins.scss" as *;
+@use "../styles/typography" as *;
+@use "../styles/variables" as *;
+
+h1,
+h2,
+p,
+html,
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Impact", "Kalam", "Noto-Sans", "T-Web", Arial, Helvetica,
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
