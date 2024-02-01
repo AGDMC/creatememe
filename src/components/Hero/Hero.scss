@@ -2,3 +2,22 @@
 @use "../../styles/mixins.scss" as *;
 @use "../../styles/typography.scss" as *;
 @use "../../styles/variables.scss" as *;
+
+div.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgb(244, 112, 134), rgb(232, 108, 35));
+}
+
+img.logo-1 {
+  width: 40%;
+  height: auto;
+}
+
+div.hero__title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: 100;
+}
