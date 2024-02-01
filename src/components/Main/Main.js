@@ -1,7 +1,33 @@
-import React from "react";
+import "./Main.scss";
 
-function Main() {
-  return <div>Main</div>;
-}
+const GenerateMeme = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
-export default Main;
+  return (
+    <section ClassName="meme">
+      <h1>Generate your Meme </h1>
+
+      <form className="meme__form" onSubmit={handleSubmit}>
+        <div className="meme__formwrapper">
+          <label className="meme__labelname" htmlFor="label">
+            Enter Top Text:
+          </label>
+          <input className="meme_input" type="text" placeholder="Add a text" />
+
+          <label className="meme__labelname" htmlFor="label">
+            Enter Bottom Text:
+          </label>
+          <input className="meme_input" type="text" placeholder="Add a text" />
+        </div>
+
+        <div className="meme__button">
+          <button className="meme__click">Generate Meme</button>
+        </div>
+      </form>
+    </section>
+  );
+};
+
+export default GenerateMeme;
