@@ -8,7 +8,6 @@ import Main from "./components/Main/Main";
 function App() {
   return (
     <BrowserRouter>
-      <Main />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
